@@ -10,7 +10,7 @@ header {
 
 section {
     background-color: #fff;
-    width: 100%;
+    width: 1200px;
     padding: 15px;
     border-radius: 10px;
     margin: auto;
@@ -33,6 +33,6 @@ footer {
 }
 
 img {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
 }

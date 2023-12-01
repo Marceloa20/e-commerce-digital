@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #008b8b;
+    background-color: #1F2232;
     font: normal 15pt 'Poppins', sans-serif;
 }
 
@@ -14,6 +14,10 @@ header {
    justify-content: space-around;
    align-items: center;
    width: 100%;
+}
+
+.logo {
+    color: #fff;
 }
 
 nav {
@@ -39,8 +43,28 @@ nav ul li a{
     color: #fff;
 }
 
-section {
+.caixa-pesquisa {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
     background-color: #fff;
+    border-radius: 40px;
+}
+
+.caixa-txt {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    padding: 2px;
+}
+
+.caixa-pesquisa i {
+    color: #000;
+}
+
+section {
+    background-color: #F1F3F9;
     width: 1200px;
     padding: 15px;
     border-radius: 10px;

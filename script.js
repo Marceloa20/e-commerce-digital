@@ -67,7 +67,7 @@ function carregar() {
     for(let i = 1; i <= 10; i++) {
         lista.innerHTML +=
         `<div class="col" style="margin: 5% 0">
-        <div class="card" style="width: 17rem;">
+        <div class="card" style="width: 17rem">
         <div>
           <img src="${listaDeCamisas[i].url}" class="card-img-top" alt="">
         </div>

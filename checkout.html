@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/1e5ce438fa.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="checkout.css">
     <title>Pagamento</title>
 </head>
 <body>
@@ -16,11 +17,11 @@
     <hr>
     <section class="row">
         <div class="col">
-            <form>
+            <form id="formulario">
                 <label for="numero">Número</label>
-                <input type="text" onkeyup="alterarBandeira()" oninput="atualizarNumeroCartao()" id="numero" class="form-control mb3" placeholder="Digite o número do cartão">
+                <input type="number" id="numero" class="form-control mb3" placeholder="Digite o número do cartão">
                 <label for="titular">Titular</label>
-                <input type="text" onkeyup="alterarNome()" id="titular" class="form-control mb3" placeholder="Nome do titular do cartão">
+                <input type="text" id="titular" class="form-control mb3" placeholder="Nome do titular do cartão">
                 <div class="row">
                     <div class="col">
                         <label for="mes">Mês</label>
@@ -36,11 +37,12 @@
                     </div>
                     <div class="col">
                         <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" class="form-control mb3" placeholder="Número atrás do cartão">
+                        <input type="number" id="cvv" class="form-control mb3" placeholder="Número atrás do cartão">
                     </div>
                 </div>
                 <label for="cpf">CPF</label>
-                <input type="text" id="cpf" class="form-control mb3" placeholder="000.000.000-00">
+                <input type="number" id="cpf" class="form-control mb3" placeholder="000.000.000-00">
+                <button id="enviar">Enviar</button>
             </form>
         </div>
         <div class="col">
@@ -51,22 +53,24 @@
                 <div style="margin-top: 60px;">
                     <i class="fa-solid fa-microchip" style="color: #daa520;"></i>
                 </div>
-                <div id="card-numero" style="margin-top: 10px; font-size: 2rem;">
+                <div id="card_numero" style="margin-top: 10px; font-size: 2rem;">
                     0000 0000 0000 0000
                 </div>
                 <div class="d-flex justify-content-between">
-                    <span id="card-titular">NOME DO TITULAR</span>
-                    <span id="card-validade">MM/AA</span>
+                    <span id="card_titular">NOME DO TITULAR</span>
+                    <span id="card_validade">MM/AA</span>
 
                 </div>
             </div>
-            <div id="verso" class="card card-body bg-dark h-100 w-75 text-white">
-                <div class="mt-5" id="card-cvv" >000</div>
+            <div id="verso" style="display: none;" class="card card-body bg-dark h-100 w-75 text-white">
+                <div class="mt-5" id="card_cvv" >000</div>
             </div>
         </div>
     </section>
 
 
     <script src="card.js"></script>
+    <script src="events.js"></script>
+    <script src="validacao.js"></script>
 </body>
 </html>

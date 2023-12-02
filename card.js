@@ -1,3 +1,4 @@
+/*
 var numero = document.getElementById('numero')
 var bandeira = document.getElementById('bandeira')
 
@@ -10,7 +11,81 @@ function alterarBandeira() {
         bandeira.innerHTML = ""
     }
 }
+*/
 
+//Seleciona o id mes e ano
+var mes = document.getElementById('mes')
+var ano = document.getElementById('ano')
+
+// Array de objetos com os meses 
+let meses = [
+    {
+        'id' : '01', 
+        'name': 'Janeiro' 
+    },
+    {
+        'id' : '02', 
+        'name': 'Fevereiro' 
+    },
+    {
+        'id' : '03', 
+        'name': 'Março' 
+    },
+    {
+        'id' : '04', 
+        'name': 'Abril' 
+    },
+    {
+        'id' : '05', 
+        'name': 'Maio' 
+    },
+    {
+        'id' : '06', 
+        'name': 'Junho' 
+    },
+    {
+        'id' : '07', 
+        'name': 'Julho' 
+    },
+    {
+        'id' : '08', 
+        'name': 'Agosto' 
+    },
+    {
+        'id' : '09', 
+        'name': 'Setembro' 
+    },
+    {
+        'id' : '10', 
+        'name': 'Outubro' 
+    },
+    {
+        'id' : '11', 
+        'name': 'Novembro' 
+    },
+    {
+        'id' : '12', 
+        'name': 'Dezembro' 
+    },
+]
+
+//Pega o ano atual
+var anoAtual = new Date().getFullYear();
+
+//Adiciona os meses no option
+for (let i = 0; i <= 11; i++) {
+        mes.innerHTML += `<option value=${meses[i].id}>${meses[i].name}</option>` 
+}
+
+//Adiciona o ano com 10 anos para cima 
+for (let i = 0; i <= 10; i++) {
+    anoAtual++
+    ano.innerHTML += `<option value=${anoAtual}>${anoAtual}</option>`
+}
+
+
+
+/*
 //Alterar o nome dinamicamente
 const inputNome = document.getElementById('titular') //Seleciona o input onde digita o nome
 const nomeTitular = document.getElementById('card-titular') //Seleciona o span onde vai aparecer o nome no cartão
@@ -41,7 +116,9 @@ for (let i = 0; i <= 10; i++) {
     option.text = anoAtual + i
     select.appendChild(option)
 }
+*/
 
+/*
 //Lista com os meses
 var meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 //Selecionando o select do mes
@@ -53,4 +130,4 @@ for (let i = 0; i < meses.length; i++) {
     option.text = meses[i]
     select.appendChild(option)
 }
-
+*/

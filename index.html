@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Meu priemiro E-commerce</title>
 </head>
-<body onload="carregar()">
+<body id="corpo">
     <header>
         <div class="logo">
           <h1>Avinte Store</h1>
+          <button class="btn-dark" id="lightbulb">
+            <abbr title="Dark Mode"><i class="fa-regular fa-lightbulb" style="color: #000000;"></i></abbr>
+          </button>
+          <button>
+            <i class="fa-regular fa-user" style="color: #000000;"></i>
+          </button>
         </div>
       <nav>
         <ul>
@@ -39,7 +45,7 @@
         <i class="fa-regular fa-heart" style="cursor: pointer; padding: 10px; color: #ffffff;"></i>
       </div>
     </header>
-    <section>
+    <section id="carrosel">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">

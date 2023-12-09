@@ -1,5 +1,61 @@
 var lista  = document.getElementById('lista')
 
+window.addEventListener('load', carregarSite);
+
+function carregarSite() {
+  carregarProdutos();
+  carregarDarkMode();
+}
+
+function carregarDarkMode() {
+  var status = localStorage.getItem('darkMode')
+  if (status == 'ativado') {
+    document.getElementById('corpo').classList.add('dark-mode');
+  } else {
+    document.getElementById('corpo').classList.remove('dark-mode');
+  }
+}
+
+document.getElementById('lightbulb').addEventListener('click', interruptor)
+
+function interruptor() {
+  var status = localStorage.getItem('darkMode')
+
+  //se luz tiver ligado, desliga
+  if (status == 'ativado') {
+    document.getElementById('corpo').classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'desativado');
+  } else { // se não liga
+    document.getElementById('corpo').classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'ativado')
+  }
+}
+
+function carregarProdutos() {
+  
+  fetch('https://run.mocky.io/v3/32a0ac9c-f937-440c-9e2e-8e56ca620218')
+  .then((response) => response.json())
+  .then( data => {
+    data.map((camisa) => {
+      lista.innerHTML +=
+        `<div class="col" style="margin: 5% 0">
+        <div class="card" style="width: 17rem">
+        <div>
+          <img src="${camisa.url}" class="card-img-top" alt="">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><strong>${camisa.nome}</strong></h4>
+          <p class="card-text">${camisa.descricao}</p>
+          <h4 class="card-text">${camisa.preco}</h4>
+          <a href="/checkout.html" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>`
+    })
+  }
+  )
+}
+
+/*
 const listaDeCamisas = [
     {
       nome: "Manchester City",
@@ -62,7 +118,9 @@ const listaDeCamisas = [
       url: "https://imgcentauro-a.akamaihd.net/768x768/M0QARE2V.jpg"
     }
 ];
+*/
 
+/*
 function carregar() {
     for(let i = 1; i <= 10; i++) {
         lista.innerHTML +=
@@ -80,3 +138,4 @@ function carregar() {
       </div>`
     }
 }
+*/

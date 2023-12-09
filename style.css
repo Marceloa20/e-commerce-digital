@@ -18,6 +18,9 @@ header {
 
 .logo {
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
@@ -65,7 +68,7 @@ nav ul li a{
 
 section {
     background-color: #F1F3F9;
-    width: 1200px;
+    width: 80%;
     padding: 15px;
     border-radius: 10px;
     margin: auto;
@@ -89,7 +92,17 @@ footer {
     font-size: 0.8em;
 }
 
-#img-carousel {
-    width: 600px;
-    height: 600px;
+#carrosel {
+  width: 80%;
+  padding: 50px;
+}
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-dark {
+    display: flex;
+    margin: 5px;
 }
